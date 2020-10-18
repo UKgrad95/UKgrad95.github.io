@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<!-- Use the HTML and CSS you developed in module 01 to fill out this template.-->
+<head>
+  <meta charset=utf-8 />
+  <title>Lab 02 Web Map Template</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link rel='icon' href='https://newmapsplus.github.io/favicon.ico' type='image/x-icon' />
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" />
+<link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Source+Sans+Pro" rel="stylesheet" />
+
+  <style>
+    /* CSS for styles go here */
+  body {
+        /* rule declarations go here! */
+        margin: 0;
+        padding: 0;
+        background: #e3e3e6;
+        font-family: 'Playfair Display', Serif; /* change made here */
+        font-weight: 300; /* addition here */
+        color: #3d3d3d;
+        font-size: 100%;
+  }
+
+  /* separate elements with the same properties by commas */
+  header, section, footer {
+  font-family: 'Source Sans Pro', Sans-Serif; /* change made here */
+  font-weight: 300; /* addition here */
+  width: 80%;
+  margin: 10px auto;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    font-weight: 900; /* addition here */
+    letter-spacing: .04em;
+  }
+
+  h2 {
+    font-size: 2em;
+    font-weight: 300; /* addition here */
+    letter-spacing: .04em;
+  }
+
+  p {
+  font-size: 1.1em;
+  line-height: 1.5em;
+  }
+
+  a {
+  color: #f87204;
+  font-weight: bold;
+  text-decoration: none;
+  }
+
+  a:hover {
+  text-decoration: underline;
+  }
+
+  ul {
+  padding-left: 20px;
+  }
+
+  li {
+  margin: 10px 0;
+  }
+
+  hr {
+  margin: 20px 0;
+  border: 0;
+  height: 1px;
+  background: #d3d3d3;
+  }
+
+  .caption {
+  margin: 0 0 20px 0;
+  display: block;
+  }
+
+  #map {
+  width: 100%;
+  height: 540px;
+  margin: 10px auto;
+  border: 2px solid #d3d3d3;
+  }
+
+  .highlight {
+  color: #22ad06; 
+  font-weight: bold;
+  }
+
+  .img-fill {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+/* Use float property to make two-column layout */
+  .first-column {
+  float: left;
+  width: 49%;
+  padding-right: 2%;  
+  }
+
+  .second-column {
+  float: left;
+  width: 49%;
+  }
+
+/* Clear floats after columns */
+  .row::after {
+  content: "";
+  display: block;
+  clear: both;
+  }
+
+@media screen and (max-width: 900px) {
+  .first-column,
+  .second-column {
+    width: 100%;
+    }
+  }
+
+  .popup-img {
+    width: 100%;
+  }
+
+  .leaflet-popup-content {
+    width: 200px;
+  }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Three cities typically explored by UK students ...</h1>
+  </header>
+  
+  <section>
+  <!-- Start row -->
+  <div class="row">
+  <div id="map"></div>
+
+    <!-- Start left column -->
+  <div class="first-column">
+    <h2>The "Tri-cities" Lexington, Louisville and Cincinnati</h2>
+    
+    <p>Most UK students will explore the three largest cities relatively close and within a few hours drive from campus.  
+      <span class="highlight">Lexington</span>, where they tend to live and visit places like Keenland, Rupp Arena, and the Lexington Legends.  
+      <span class="highlight">Louisville</span>, the rival school and home to many Bourbon Trail Distilleries, The Louisville Slugger Museum, and Churchhill Downs.  
+      <span class="highlight">Cincinnati</span>, the city across the river and home to the Cincinnati Reds.
+    </p>
+    <p>For additional information about <a href="https://www.visitlex.com/about/visitors-center/">Lexington, Kentucky</a>. </p>
+    <p>For additional information about <a href="https://www.gotolouisville.com/">Louisville, Kentucky</a>. </p>
+    <p>For additional information about <a href="https://www.downtowncincinnati.com/">Cincinnati, Ohio</a>. </p>
+    <ul>
+      <li>See NMP projects on GitHub: <a href="https://github.com/newmapsplus">New Maps Plus</a></li>
+      <li>Follow me on Twitter: <a href="https://twitter.com/CharlotteWings">@CharlotteWings</a></li>
+      <li>Follow me on LinkedIn: <a href='https://www.linkedin.com/in/sean-stewart-45259414'>LinkedIn Profile</a></li>
+      <!-- <li>Visit my <a href='#'>mapping portfolio</a>.</li> -->
+    </ul>
+    <!-- End left column -->
+  </div>
+
+  <!-- Start right column -->
+  <div class="second-column">
+    <img src="images/Welcome-LEX.jpg" alt="Lexington" class="img" >
+    <div class="caption">
+     Source:<a href="https://hubpages.com/travel/Things-to-do-in-Lexington-KY">Hub Pages Blog</a>.  
+     Welcome to Lexington KY
+    </div>
+  <!-- End right column -->
+  </div>
+
+  <!-- End row column -->
+  </div>
+    <!-- paragraph and list elements here -->
+  </section>
+  
+  <footer>
+    <hr>
+    <a href="https://newmapsplus.github.io">
+          <img src="https://newmapsplus.github.io/assets/graphics/logo-2018-nmp-75px-h-gray.png" alt="University of Kentucky New Maps Plus">
+          </a>
+  
+      <a href="https://uky-gis.github.io">
+          <img src="https://newmapsplus.github.io/assets/graphics/logo-2018-geography-75px-h.png" alt="University of Kentucky Department of Geography">
+      </a>
+  </footer>
+
+  <!-- Add link to Leaflet JavaScript library. -->
+  <!-- Use the latest stable version @ leafletjs.com/download.html -->
+  <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  
+  <!-- Starter Javascript -->
+  <script>
+    // Map options control initial location and zoom level.
+    var options = {
+      center: [38.5425, -84.7628],
+      zoom: 8
+    }
+
+    // Create Leaflet map with above options.
+    var map = L.map('map', options);
+
+    // Get basemap URL from Leaflet Providers
+    var basemap_url = 'http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}'
+
+    // Get basemap attributes from Leaflet Providers
+    var basemap_attributes = {
+      attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      subdomains: 'abcd',
+      minZoom: 1,
+      maxZoom: 16,
+      ext: 'png'
+    }
+
+    // Add tileset as a layer in our map. 
+    var tiles = L.tileLayer(basemap_url, basemap_attributes).addTo(map);
+
+    // ************************************************** //
+
+    // popup image //
+
+
+    // STORING DATA AS VARIABLES IN ARRAYS
+
+    // variables referencing data values
+    var city1Name = "Lexington", // string value
+      city1Coords = [38.0297, -84.4947], //array value
+      city1Pop = 328690, // numeric value
+      city1Capital = false, // boolean value
+      city1State = "Kentucky"; // string value
+     
+    var city2Name = "Louisville", // string value
+      city2Coords = [38.2569, -85.7511], //array value
+      city2Pop = 624890, // numeric value
+      city2Capital = false, // boolean value
+      city2State = "Kentucky"; // string value
+
+    var city3Name = "Cincinnati", // string value
+      city3Coords = [39.0993, -84.5151], //array value
+      city3Pop = 1746000, // numeric value
+      city3Capital = false, // boolean value
+      city3State = "Ohio"; // string value
+
+    // arrays of data
+    var cities = [city1Name, city2Name, city3Name], // city1Name is the zero index of the array
+      coords = [city1Coords, city2Coords, city3Coords],
+      populations = [city1Pop, city2Pop, city3Pop],
+      capitals = [city1Capital, city2Capital, city3Capital],
+      states = [city1State, city2State, city3State];
+
+    // ADDING FIRST MARKER TO MAP
+    
+    console.log(cities[0]);  // Lexington
+    console.log(populations[0]); // 328690
+    // creating a string of the Popup content
+    var city1Popup = `<img src="images/VisitLexlogo.png" class='popup-img'></b><br>
+                      <b>${cities[0]}</b><br>
+                      <b>Population</b>: ${populations[0].toLocaleString()}`;
+
+    // if city is a capital city
+    if (capitals[0] == true) {
+      // concatenate a string to the existing string value
+      city1Popup += `<br>Capital of ${states[0]}`;
+    }
+
+    // Use different color marker
+    // from https://github.com/pointhi/leaflet-color-markers
+
+    var greenIcon = new L.Icon({
+      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+
+    // create the Leaflet marker using the coordinates
+    L.marker(coords[0], {icon: greenIcon})
+      .addTo(map) // add it to the map
+      .bindPopup(city1Popup); // bind the Popup
+
+    // ADDING SECOND MARKER TO MAP
+
+    console.log(cities[1]);  // Louisville
+    console.log(populations[1]); // 624890
+    // creating a string of the Popup content
+    var city2Popup = `<img src="images/VisitLOU.png" class='popup-img'></b><br>
+                      <b>${cities[1]}</b><br>
+                      <b>Population</b>: ${populations[1].toLocaleString()}`;
+
+    // if city is a capital city
+    if (capitals[1] == true) {
+      // concatenate a string to the existing string value
+      city2Popup += `<br>Capital of ${states[1]}`;
+    }                  
+    
+    // create the Leaflet marker using the coordinates
+    L.marker(coords[1])
+      .addTo(map) // add it to the map
+      .bindPopup(city2Popup); // bind the Popup
+  
+    // ADDING SECOND MARKER TO MAP
+
+    console.log(cities[2]);  // Cincinnati
+    console.log(populations[2]); // 1746000
+    // creating a string of the Popup content
+    var city3Popup = `<img src="images/VisitCIN.png" class='popup-img'></b><br>
+                      <b>${cities[2]}</b><br>
+                      <b>Population</b>: ${populations[2].toLocaleString()}`;
+    
+    // if city is a capital city
+    if (capitals[2] == true) {
+      // concatenate a string to the existing string value
+      city3Popup += `<br>Capital of ${states[2]}`;
+    }                  
+    
+    // create the Leaflet marker using the coordinates
+    L.marker(coords[2])
+      .addTo(map) // add it to the map
+      .bindPopup(city3Popup); // bind the Popup
+  </script>
+
+</body>
+
+</html>

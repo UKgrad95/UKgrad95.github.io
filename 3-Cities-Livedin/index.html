@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<!-- Use the HTML and CSS you developed in module 01 to fill out this template.-->
+
+<head>
+  <meta charset=utf-8 />
+  <title>Lab 03 Work Template</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link rel='icon' href='https://newmapsplus.github.io/favicon.ico' type='image/x-icon' />
+
+  <!-- Add links to external css stylesheets. -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Source+Sans+Pro" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+  
+  <style>
+    /* Add custom styles. */
+    body {
+        /* rule declarations go here! */
+        margin: 0;
+        padding: 0;
+        background: #e3e3e6;
+        font-family: 'Playfair Display', Serif; /* change made here */
+        font-weight: 300; /* addition here */
+        color: #3d3d3d;
+        font-size: 100%;
+  }
+
+  /* separate elements with the same properties by commas */
+  header, section, footer {
+  font-family: 'Source Sans Pro', Sans-Serif; /* change made here */
+  font-weight: 300; /* addition here */
+  width: 80%;
+  margin: 10px auto;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    font-weight: 900; /* addition here */
+    letter-spacing: .04em;
+  }
+
+  h2 {
+    font-size: 2em;
+    font-weight: 300; /* addition here */
+    letter-spacing: .04em;
+  }
+
+  p {
+  font-size: 1.1em;
+  line-height: 1.5em;
+  }
+
+  a {
+  color: #f87204;
+  font-weight: bold;
+  text-decoration: none;
+  }
+
+  a:hover {
+  text-decoration: underline;
+  }
+
+  ul {
+  padding-left: 20px;
+  }
+
+  li {
+  margin: 10px 0;
+  }
+
+  hr {
+  margin: 20px 0;
+  border: 0;
+  height: 1px;
+  background: #d3d3d3;
+  }
+
+  .caption {
+  margin: 0 0 20px 0;
+  display: block;
+  }
+
+  #map {
+    width: 100%;
+    height: 60vh;
+    margin: 10px auto;
+    border: 2px solid #d3d3d3;
+  }
+
+  .highlight {
+  color: #22ad06; 
+  font-weight: bold;
+  }
+
+  .img-fill {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+/* Use float property to make two-column layout */
+  .first-column {
+  float: left;
+  width: 49%;
+  padding-right: 2%;  
+  }
+
+  .second-column {
+  float: left;
+  width: 49%;
+  }
+
+/* Clear floats after columns */
+  .row::after {
+  content: "";
+  display: block;
+  clear: both;
+  }
+
+@media screen and (max-width: 900px) {
+  .first-column,
+  .second-column {
+    width: 100%;
+    }
+  }
+
+  .popup-img {
+    width: 100%;
+  }
+
+  .leaflet-popup-content {
+    width: 200px;
+  }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <!-- Add header information -->
+    <h1>Cities in the State of Georgia I have lived in...</h1>
+  </header>
+  <section>
+    
+    <!-- Start row -->
+    <div class="row">
+    <div id="map"></div>
+
+    <!-- Add map and body content -->
+    <!-- Start left column first-column -->
+    <div class="first-column">
+    <h2>Atlanta, Augusta and Savannah</h2>
+
+    <p>I grew up mostly in the Atlanta area.  Spent some time in Augusta thanks to the Army.  
+    Lived in the Savannah area for acouple of years as well as a kid.</p>
+
+    <p>For additional information about <a href="https://www.atlantaga.gov/">Atlanta, Georgia</a>. </p>
+    <p>For additional information about <a href="https://www.augustaga.gov/">Augusta, Georgia</a>. </p>
+    <p>For additional information about <a href="https://www.savannah.com/">Savannah, Georgia</a>. </p>
+
+    <!-- <p>This map demonstrates using JavaScript to place map markers with tooltips (or popups) with meaningful information using array data structures, for loops, and if/else statements.
+    It was quite frustrating to do!!!!!</p> -->
+
+    <p>Map authored by me, SEAN STEWART</p>
+    <ul>
+      <li>See NMP projects on GitHub: <a href="https://github.com/newmapsplus">New Maps Plus</a></li>
+      <li>Follow me on Twitter: <a href="https://twitter.com/CharlotteWings">@CharlotteWings</a></li>
+      <li>Follow me on LinkedIn: <a href='https://www.linkedin.com/in/sean-stewart-45259414'>LinkedIn Profile</a></li>
+      <!-- <li>Visit my <a href='#'>mapping portfolio</a>.</li> -->
+    </ul>
+    <!-- End left column first column -->
+    </div>
+
+
+    <!-- Start right column second column -->
+    <div class="second-column">
+      <img src="images/Atlanta-Georgia-Skyline.jpg" alt="Atlanta GA Skyline" class="img" >
+      <div class="caption">
+          Source:<a href="https://atlantatribe.com/Home/visit-atlanta-georgia/">Atlanta Tribe</a>.  
+          Visit Atlanta Georgia
+
+      <p>Atlanta is the capital of Georgia.  Home to many things, including:
+        The 1996 Olympic Games (which I actually worked at), The Georgia Aquarium, and the World of Coca-Cola.
+      </p>
+    </div>
+    <!-- End right column second column -->
+    </div>
+
+    <!-- End row column -->
+    </div>
+
+  </section>
+  <footer>
+    <!-- Add footer information -->
+    <hr>
+    <a href="https://newmapsplus.github.io">
+          <img src="https://newmapsplus.github.io/assets/graphics/logo-2018-nmp-75px-h-gray.png" alt="University of Kentucky New Maps Plus">
+          </a>
+  
+      <a href="https://uky-gis.github.io">
+          <img src="https://newmapsplus.github.io/assets/graphics/logo-2018-geography-75px-h.png" alt="University of Kentucky Department of Geography">
+      </a>
+  </footer>
+
+  <!-- Add link to Leaflet JavaScript library. -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+  <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script>
+    // initial map options
+    var options = {
+      center: [32.1656, -82.8501],
+      zoom: 6
+    }
+
+    // instantiate Leaflet map object
+    var map = L.map('map', options);
+
+    // Get basemap URL from Leaflet Providers
+    var basemap_url = 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}'
+
+    // Get basemap attributes from Leaflet Providers
+    var basemap_attributes = {
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+    }
+
+    // Add tileset as a layer in our map. 
+    var tiles = L.tileLayer(basemap_url, basemap_attributes);
+
+    // add tiles to map
+    map.addLayer(tiles);
+
+    // variable to hold string value of city name
+    //var cityName = "Denver";
+
+    // variable to hold number value of city population
+    //var cityPopulation = 649495;
+
+    // build a string with HTML tags and content
+    //var popup = `<b>${cityName}</b><br><b>population</b>: ${cityPopulation}`;
+
+    //var cityCoords = [39.74, -104.99];
+    // create a Leaflet marker at the coordinates of Denver, CO
+    // add it to the map
+    // and bind the popup content to the marker.
+    //L.marker(cityName)
+    //  .addTo(map)
+    //  .bindPopup(popup);
+    
+    var cities = ["Atlanta", "Augusta", "Savannah"], // string; my 3 cities (one capital and two non-capital)
+        cityCoords = [[33.7490, -84.3880], [33.4735, -82.0105], [32.0809, -81.0912]], // array; city coordinates 
+        cityPops = [523738, 185349, 145754], // numeric; city populations
+        cityCapital = [true, false, false]; // bolean; capital city - true or false
+        cityImage = ["images/atlanta-popup.jpeg", "images/augusta-popup.jpg", "images/savannah-popup.jpg"]
+        cityInfo = ["capital city and the capital of Georgia", "home to The Masters PGA Golf Tournament", "port city"]
+
+    var greenIcon = new L.Icon({
+      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+    
+    for (var i = 0; i < cities.length; i++) {
+      var cityPopup = `<img src="${cityImage[i]}" class='popup-img'></b><br>
+                      <b>${cities[i]}</b><br>
+                      <b>Population</b>: ${cityPops[i].toLocaleString()}<br>
+                      ${cities[i]} is a ${cityInfo[i]}`;
+      if (cityCapital[i]) { // variables are already true or false in array
+        L.marker(cityCoords[i], {icon: greenIcon})
+        .addTo(map)
+        .bindPopup(cityPopup);
+      } else {
+        L.marker(cityCoords[i])
+        .addTo(map)
+        .bindPopup(cityPopup);
+      }
+   
+    }
+      
+    
+
+  </script>
+
+</body>

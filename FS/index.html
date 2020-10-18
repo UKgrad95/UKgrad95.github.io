@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Fire, Rescue & EMS Locations Brunswick County, North Carolina</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,900i" rel="stylesheet">
+
+    <style>
+        /* UK Colors: 
+            #c7c9c8 light gray 
+            #63666a dark gray
+            #15397f dark blue
+            #009bda light blue
+            #0033a0 official blue
+        */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #c7c9c8;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            color: #3d3d3d;
+            font-size: 1.1em;
+
+        }
+
+        section {
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        h1 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 900i;
+            font-size: 2.8em;
+            font-style: italic;
+            /* The em unit. 3x the current size */
+            letter-spacing: .01em;
+            margin: 0 0 15px 0;
+            /* text-transform: uppercase; */
+        }
+
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            color: #63666a;
+            font-size: 1.5em;
+            letter-spacing: .06em;
+            font-style: italic;
+            margin: 0 0 25px 0;
+        }
+
+        p {
+            font-size: 1.15em;
+            line-height: 1.8em;
+            margin: 0 0 25px 0;
+        }
+
+        a {
+            color: #15397f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            padding: 0px 20px 4px 20px;
+            /* font-size: 0.96em; */
+            line-height: 1.6em;
+            color: #63666a;
+        }
+
+        li {
+            margin: 10px 0
+        }
+
+        #map {
+            width: 100%;
+            margin: 0px auto;
+
+        }
+
+        .max-image-width {
+            width: 100%;
+        }
+
+        /* add custom style class here */
+
+        .linkbox {
+            margin: 3px 0 20px 0;
+            display: block;
+            font-weight: 300;
+        }
+
+        hr {
+            border: 0px;
+            border-bottom: 1px solid #3d3d3d;
+            padding-top: 20px;
+        }
+
+        /* Use float property to make two-column layout */
+
+        .first-column {
+            float: left;
+            width: 48%;
+            padding-right: 20px;
+        }
+
+        .column {
+            float: left;
+            width: 48%;
+        }
+
+        /* Clear floats after the columns */
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .svg-title {
+            float: left;
+            display: inline-block;
+            width: 75px;
+            margin: -8px 10px -8px 0;
+        }
+
+        /* When browser is 800px wide or less */
+
+        @media screen and (max-width: 800px) {
+
+            .first-column,
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<div id='map'>
+		<!-- Add your custom HTML here -->
+        <img src="../FS/graphics/Fire_1200.png" alt="Fire Stations" class="max-image-width"><!-- custom CSS here -->
+			<br> <!-- line break tag -->
+			<a href="../FS/graphics/Fire_8000.png">Link to high resolution map</a>
+
+	</div>
+
+<body>
+    
+    <section>
+        
+        <h1>Fire, Rescue & EMS Station Locations in Brunswick County, North Carolina</h1>
+        <h2>Map Prepared By: Sean Stewart, University of Kentucky Geography</h2>
+        <div class="row">
+            <div class="first-column">
+                <p>
+                    This map shows the distribution of all Fire, Rescue & EMS Department Station locations in Brunswick County, North Carolina  .
+                    This data was developed by researching the Brunswick County Website for list of Fire Departments (<a href="https://www.brunswickcountync.gov/emergency/fire-departments/">Brunswick County Government</a>)
+                    and this was crossed referrenced with the North Carolina Fire Station Mapping Project (<a href="http://fdmaps.com/brunswick-county/">FDMaps.com</a>).
+                    Locations were also confirmed via searching Google Maps.
+                </p>
+                <p> The majority of the county is serviced by Volunteer Fire Departments.  All departments within the county tend to coordinate training
+                    together, as well as fight fires, and perform rescue services jointly depending upon the location of the emergency.
+                </p>
+                <br>
+                <p>CRS/Projection: NAD 1983 State Plane North Carolina FIPS 3200 Feet (ESRI: 102719)</p>
+                <p>Scale: 1:250,000</p>
+                <p>Date: June 16, 2020</p>
+            
+                <h3>Tools used in this project</h3>
+                <ul>
+                    <li>Software Used: QGIS v3.12</li>
+                    <li>Data Sources: Basemap © OpenStreetMap contributors, locations derived from Google Maps</li>
+                    
+                </ul>
+
+                <hr>
+                <h3>Project assets</h3>
+                <ul>
+                    <!-- <li><a href="arches_us.geojson" download>point locations GeoJSON</a></li>-->
+                    <li><a href="../FS/geojson/FD_Locations.geojson" class="linkbox">Link to fire stations geojson</a></li>
+                                    
+                </ul>
+                </p>
+
+
+            </div>
+            <div class="column">
+                <img class="max-image-width" src="../FS/graphics/southport-fd-hq.jpg"
+                    title="Southport Fire Department HQ">City of Southport Fire Department Headquarters
+                <br>
+                <img class="max-image-width" src="../FS/graphics/supply-vfd-sta13.jpg"
+                    title="Supply Volunteer Fire Department">Supply Volunteer Fire Department Station 13
+                <br>
+                <img class="max-image-width" src="../FS/graphics/bolivia-vol-dept.jpg"
+                    title="Boliva Volunteer Fire Department">Bolivia Volunteer Fire Department
+                <br>
+                <img class="max-image-width" src="../FS/graphics/oak-island-water-rescue-sta44.jpg"
+                    title="Oak Island Water Rescue">Oak Island Water Rescue Station 44
+            </div>
+        </div>
+
+
+        <hr>
+        <!-- <h4><a href="https://uky-gis.github.io">UKy GIS and Mapping</a></h4> -->
+        <li>See my project on GitHub: <a href="https://ukgrad95.github.io/Fire-Stations-BC-NC/">Fire-Stations-BC-NC</a></li>
+		<li>Follow me on twitter: <a href="https://twitter.com/CharlotteWings">@CharlotteWings</a></li>
+        <a href="https://uky-gis.github.io">
+            <img src="https://uky-gis.github.io/graphics/logo-color-400px.png"
+                alt="University of Kentucky Geography"></a>
+        <a href="https://newmapsplus.as.uky.edu">
+            <img src="https://newmapsplus.as.uky.edu/sites/default/files/NMP%20Logo.png" alt="New Maps Plus"></a>
+    </section>
+</body>
+
+</html>
