@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8 />
+  <title>Lab 05 Starter</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+  <link href="https://api.mapbox.com/mapbox-assembly/v0.24.0/assembly.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+  <link href='css/styles.css' rel='stylesheet' />
+  <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class='flex-parent viewport-full relative scroll-hidden'>
+    <div class='flex-child w-full w300-ml absolute static-ml left bottom'>
+      <div class='flex-parent flex-parent--column viewport-third h-full-ml hmax-full bg-white py18 px12'>
+        <div class='flex-child flex-child--grow px12 py12 scroll-auto'>
+          <h1 class='txt-h1 mb6'>Kenya Student Enrollment</h1>
+          <p>This map was created using the Kenya OpenData source on 2014 National Boys and Girls Enrollments numbers per Class (Grades) for Primary School.<br>
+            It should allow the user to do the following:<br>
+            1. See the spatial distribution of boys and girls enrollment rates across the Kenyan counties for a given grade.<br>
+            2. Visually compare boys and girls enrollment rates across these schools for a given grade.<br>
+            3. See any changes in this distribution through the grade levels. </p>
+          <h2 class='txt-xl mt18 mb12'>Goals</h2>
+          <p>Hopefully this map could be useful in accomplishing some of the following possible goals:<br>
+            1. Make better, more equitable decisions about allocating educational resources.<br>
+            2. Feel Kenyan national pride at achieving equity in gender representation across the.<br>
+            3. Better understand spatio-temporal patterns in grade-level enrollment, particularly when students move from primary to middle school.
+          </p>
+        </div>
+        <footer class='px12 py12 bg-gray-faint txt-s'>
+          <ul>
+            <li>Source:
+              <a class='link' href='https://www.opendata.go.ke/datasets/national-boys-and-girls-enrollments-per-class-for-primary-school-education'>Kenya OpenData</a>
+            </li>
+            <li>Map authored by
+              <a class='link' href='https://ukgrad95.github.io/'>Sean Stewart</a>
+            </li>
+          </ul>
+        </footer>
+      </div>
+    </div>
+    <div class='flex-child flex-child--grow viewport-twothirds viewport-full-ml'>
+      <div id="map" class='viewport-twothirds viewport-full-ml'></div>
+    </div>
+  </div>
+
+  <!-- ui slider -->
+  <!--<div id='slider' class='range w240 bg-white round-ml px12'>
+    <input type='range' />
+  </div> -->
+  <div id='slider' class='w240 bg-white round-ml px12 py12'>
+    <p class='txt-bold'>Grade: <span>1</span></p>
+    <div class='range'>
+      <input type='range' min="1" , max="8" , value="1" , step="1" />
+    </div>
+  </div>
+
+  <!-- grade legend -->
+  <div id='grade'><!-- class='py6 px12 bg-white border border--gray-light round'>-->
+    <!--<p class='txt-bold'>Grade: <span>1</span></p>-->
+  </div>
+
+  <!-- ui info panel -->
+  <div id='info' class='py6 px12 bg-white border border--gray-light round fixed w240'>
+    <p>County: <span></span></p>
+    <p class='girls'>girls <span></span>: <span class='txt-l txt-bold'></span></p>
+    <p class='boys'>boys <span></span>: <span class='txt-l txt-bold'></span></p>
+
+    <!-- Additional elements added here for this step! -->
+    <hr class='txt-hr'>
+    <p class='my6'>Trend: grades 1 &ndash; 8</p>
+    <p class='mb6'><span class='girlspark'></span></p>
+    <p><span class='boyspark'></span></p>
+  </div>
+
+  <!-- legend -->
+  <!--<div id='legend' class='bg-white round-ml px18 py12'>
+    <h3 class='txt-bold mb12 w-full mx-auto'>Legend Title</h3>
+    <div class='bg-blue h180 w240 mx-auto'></div>
+  </div>-->
+  <div id='legend' class='bg-white round px12 py12 relative'>
+    <h3 class='txt-bold mb12 w180'>Number of <span class="girls">girl</span> and <span class="boys">boy</span> students enrolled by county</h3>
+    <div class='legend-circles relative w180'>
+      <div class="legend-large border border--gray-light absolute"></div>
+      <div class="legend-small border border--gray-light absolute"></div>
+      <div class="legend-large-label txt-m absolute"></div>
+      <div class="legend-small-label txt-m absolute"></div>
+    </div>
+  </div>
+
+
+  <script async defer src="https://api.mapbox.com/mapbox-assembly/v0.24.0/assembly.js"></script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
+  <script src='js/app.js'></script>
+
+</body>
+
+</html>
